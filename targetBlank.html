@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vulnerable Page</title>
+    </head>
+    <body>
+        <p>
+            <script>
+                var href;
+
+                if (window.opener) {
+                    href = window.opener.location.href;
+
+                    document.writeln('You came from <a href="' + href + '">' + href + '</a>');
+                } else {
+                    document.writeln('This page was safely opened.');
+                }
+
+            </script>
+        </p>
+    </body>
+</html>
